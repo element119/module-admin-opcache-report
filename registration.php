@@ -9,6 +9,6 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'Element119_ModuleName',
+    'Element119_AdminOpCacheReport',
     __DIR__
 );

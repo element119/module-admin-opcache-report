@@ -1,10 +1,4 @@
-<div align="center">
-
-<!-- Module Image Here -->
-
-</div>
-
-<h1 align="center">element119 | Module Name</h1>
+<h1 align="center">element119 | Admin OpCache Report</h1>
 
 ## 📝 Features
 ✔️ ...
@@ -30,7 +24,7 @@
 ## 🔌 Installation
 Run the following command to *install* this module:
 ```bash
-composer require element119/module-name
+composer require element119/module-admin-opcache-report
 php bin/magento setup:upgrade
 ```
 
@@ -39,7 +33,7 @@ php bin/magento setup:upgrade
 ## ⏫ Updating
 Run the following command to *update* this module:
 ```bash
-composer update element119/module-name
+composer update element119/module-admin-opcache-report
 php bin/magento setup:upgrade
 ```
 
@@ -48,7 +42,7 @@ php bin/magento setup:upgrade
 ## ❌ Uninstallation
 Run the following command to *uninstall* this module:
 ```bash
-composer remove element119/module-name
+composer remove element119/module-admin-opcache-report
 php bin/magento setup:upgrade
 ```
 

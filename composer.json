@@ -1,7 +1,7 @@
 {
-    "name": "element119/module-name",
+    "name": "element119/module-admin-opcache-report",
     "type": "magento2-module",
-    "description": "A Magento 2 module that...",
+    "description": "A Magento 2 module to show some PHP OpCache-related information in the admin.",
     "license": "proprietary",
     "authors": [
         {
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Element119\\ModuleName\\": ""
+            "Element119\\AdminOpCacheReport\\": ""
         },
         "files": [
             "registration.php"
