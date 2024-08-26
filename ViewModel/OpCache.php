@@ -47,6 +47,11 @@ class OpCache implements ArgumentInterface
         return $this->opCacheStatus;
     }
 
+    public function formatNumber($number): string
+    {
+        return number_format($number, $this->moduleConfig->getFloatPrecision());
+    }
+
     /**
      * Get Magento module OpCache statistics.
      *
@@ -98,10 +103,7 @@ class OpCache implements ArgumentInterface
 
     public function getOrdinalMemoryValue(int $memoryValue): string
     {
-        $value = number_format(
-            $memoryValue / (1024 ** $this->moduleConfig->getMemoryUnitExponent()),
-            $this->moduleConfig->getFloatPrecision()
-        );
+        $value = $this->formatNumber($memoryValue / (1024 ** $this->moduleConfig->getMemoryUnitExponent()));
 
         return $value . $this->moduleConfig->getMemoryUnitLabel();
     }

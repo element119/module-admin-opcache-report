@@ -28,18 +28,12 @@
                         <argument name="opcache_info_view_model" xsi:type="object">
                             Element119\AdminOpCacheReport\ViewModel\OpCache
                         </argument>
-                        <argument name="module_config_view_model" xsi:type="object">
-                            Element119\AdminOpCacheReport\System\ModuleConfig
-                        </argument>
                     </arguments>
                 </block>
                 <block name="opcache.info.performance" template="Element119_AdminOpCacheReport::performance.phtml">
                     <arguments>
                         <argument name="opcache_info_view_model" xsi:type="object">
                             Element119\AdminOpCacheReport\ViewModel\OpCache
-                        </argument>
-                        <argument name="module_config_view_model" xsi:type="object">
-                            Element119\AdminOpCacheReport\System\ModuleConfig
                         </argument>
                     </arguments>
                 </block>
