@@ -7,7 +7,7 @@ declare(strict_types=1);
 
 namespace Element119\AdminOpCacheReport\Model\ResourceModel\OpCacheFlushLog;
 
-use Element119\AdminOpCacheReport\Model\ResourceModel\OpCacheFlushLog;
+use Element119\AdminOpCacheReport\Model\OpCacheFlushLog;
 use Element119\AdminOpCacheReport\Model\ResourceModel\OpCacheFlushLog as OpCacheFlushLogResourceModel;
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 
