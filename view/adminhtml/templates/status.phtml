@@ -28,7 +28,7 @@ $opCacheViewModel = $block->getData('opcache_info_view_model');
         </span>
     </div>
 <?php else: ?>
-    <div class="opcache-status-notice enabled">
+    <div class="opcache-status-notice disabled">
         <?= $escaper->escapeHtml(__('OpCache Disabled')); ?>
     </div>
     <div id="opcache-help">
