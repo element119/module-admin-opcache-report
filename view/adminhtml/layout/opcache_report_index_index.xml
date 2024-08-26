@@ -7,9 +7,22 @@
  -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Element119_AdminOpCacheReport::css/module.css"/>
+    </head>
     <body>
         <referenceContainer name="content">
             <block class="Element119\AdminOpCacheReport\Block\Adminhtml\OpCache\Flush" name="adminhtml.opcache.flush"/>
+
+            <container name="opcache.info.wrapper" htmlTag="div">
+                <block name="opcache.info.status" template="Element119_AdminOpCacheReport::status.phtml">
+                    <arguments>
+                        <argument name="opcache_info_view_model" xsi:type="object">
+                            Element119\AdminOpCacheReport\ViewModel\OpCache
+                        </argument>
+                    </arguments>
+                </block>
+            </container>
         </referenceContainer>
     </body>
 </page>

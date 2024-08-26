@@ -1,0 +1,30 @@
+/**
+ * Copyright © element119. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+.opcache-status-notice {
+    border-radius: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 2rem;
+    width: fit-content;
+}
+
+.opcache-status-notice.disabled {
+    background-color: #fef2f2;
+    border: 2px solid #ef4444;
+}
+
+.opcache-status-notice.enabled {
+    background-color: #ecfdf5;
+    border: 2px solid #10b981;
+}
+
+#opcache-help {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.help-links {
+    margin-left: 2rem;
+}

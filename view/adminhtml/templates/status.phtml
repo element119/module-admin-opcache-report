@@ -1,0 +1,92 @@
+<?php
+/**
+ * Copyright © element119. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+declare(strict_types=1);
+
+use Element119\AdminOpCacheReport\ViewModel\OpCache;
+use Magento\Backend\Block\Template;
+use Magento\Framework\Escaper;
+
+/** @var Escaper $escaper */
+/** @var Template $block */
+/** @var OpCache $opCacheViewModel */
+$opCacheViewModel = $block->getData('opcache_info_view_model');
+?>
+<?php if ($opCacheViewModel->getOpCacheStatusData('opcache_enabled')): ?>
+    <div class="opcache-status-notice enabled">
+        <?= $escaper->escapeHtml(__('OpCache Enabled')); ?>
+    </div>
+<?php else: ?>
+    <div class="opcache-status-notice enabled">
+        <?= $escaper->escapeHtml(__('OpCache Disabled')); ?>
+    </div>
+    <div id="opcache-help">
+        <span class="summary">
+            <?= $escaper->escapeHtml(
+                __('It is highly recommended to enable PHP OpCache. Enabling it can dramatically improve performance and customer experience.')
+            ); ?>
+        </span>
+        <ul class="help-links">
+            <li>
+                <?= $escaper->escapeHtml(
+                    __('<b>Faster script execution</b> due to precompiled bytecode'),
+                    ['b']
+                ); ?>
+            </li>
+            <li>
+                <?= $escaper->escapeHtml(
+                    __('<b>Reduced CPU usage</b> by avoiding repeated compilations'),
+                    ['b']
+                ); ?>
+            </li>
+            <li>
+                <?= $escaper->escapeHtml(
+                    __('<b>Higher memory usage</b> for storing cached bytecode, but with improved overall efficiency'),
+                    ['b']
+                ); ?>
+            </li>
+            <li>
+                <?= $escaper->escapeHtml(
+                    __('<b>Improved scalability</b> and performance under high traffic'),
+                    ['b']
+                ); ?>
+            </li>
+        </ul>
+
+        <span class="summary">
+            <?= $escaper->escapeHtml(__('More information can be found in the links below:')); ?>
+        </span>
+        <ul class="help-links">
+            <li>
+                <a href="https://www.php.net/manual/en/book.opcache.php"
+                   target="_blank"
+                   title="<?= $escaper->escapeHtmlAttr(__('PHP OpCache Documentation')); ?>">
+                    <?= $escaper->escapeHtml(__('PHP OpCache Documentation')); ?>
+                </a>
+            </li>
+            <li>
+                <a href="https://experienceleague.adobe.com/en/docs/commerce-operations/installation-guide/system-requirements#php-opcache"
+                   target="_blank"
+                   title="<?= $escaper->escapeHtmlAttr(__('System Requirements for OpCache')); ?>">
+                    <?= $escaper->escapeHtml(__('System Requirements for OpCache')); ?>
+                </a>
+            </li>
+            <li>
+                <a href="https://experienceleague.adobe.com/en/docs/commerce-operations/performance-best-practices/software#bytecode"
+                   target="_blank"
+                   title="<?= $escaper->escapeHtmlAttr(__('OpCache Configuration Recommendations for Performance')); ?>">
+                    <?= $escaper->escapeHtml(__('OpCache Configuration Recommendations for Performance')); ?>
+                </a>
+            </li>
+            <li>
+                <a href="https://experienceleague.adobe.com/en/docs/commerce-operations/implementation-playbook/best-practices/planning/opcache-memory-size"
+                   target="_blank"
+                   title="<?= $escaper->escapeHtmlAttr(__('Best Practise OpCache Memory Size')); ?>">
+                    <?= $escaper->escapeHtml(__('Best Practise OpCache Memory Size')); ?>
+                </a>
+            </li>
+        </ul>
+    </div>
+<?php endif; ?>
