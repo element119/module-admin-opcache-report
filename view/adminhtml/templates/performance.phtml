@@ -14,7 +14,7 @@ use Magento\Framework\Escaper;
 /** @var OpCache $opCacheViewModel */
 $opCacheViewModel = $block->getData('opcache_info_view_model');
 
-if ($opCacheViewModel->getOpCacheStatusData('opcache_enabled')) {
+if (!$opCacheViewModel->getOpCacheStatusData('opcache_enabled')) {
     return;
 }
 
