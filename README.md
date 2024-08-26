@@ -21,8 +21,6 @@
 
 ⏳ Data visualisation
 
-⏳ Per-module statistics
-
 <br/>
 
 ## 🔌 Installation
@@ -78,4 +76,4 @@ The number of decimal places to use in the OpCache report.
 ![e119-opcache-report-disabled](https://github.com/user-attachments/assets/159b9649-0b9a-4833-ac06-eb0ef3a49193)
 
 ### Report - OpCache Enabled
-![e119-opcache-report-enabled](https://github.com/user-attachments/assets/4111772a-a372-459c-be06-2f8b4a966862)
+![e119-opcache-report-enabled](https://github.com/user-attachments/assets/c73aa877-0359-4d29-a50d-d3a77f0cebfa)

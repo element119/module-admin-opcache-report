@@ -7,6 +7,7 @@
  -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="hyva_admin_grid"/>
     <head>
         <css src="Element119_AdminOpCacheReport::css/module.css"/>
     </head>
@@ -41,6 +42,19 @@
                             Element119\AdminOpCacheReport\System\ModuleConfig
                         </argument>
                     </arguments>
+                </block>
+                <block name="opcache.info.modules" template="Element119_AdminOpCacheReport::modules.phtml">
+                    <arguments>
+                        <argument name="opcache_info_view_model" xsi:type="object">
+                            Element119\AdminOpCacheReport\ViewModel\OpCache
+                        </argument>
+                    </arguments>
+
+                    <block class="Hyva\Admin\Block\Adminhtml\HyvaGrid" name="opcache.module.grid">
+                        <arguments>
+                            <argument name="grid_name" xsi:type="string">opcache-module-grid</argument>
+                        </arguments>
+                    </block>
                 </block>
             </container>
         </referenceContainer>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © element119. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+ -->
+<grid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Hyva_Admin:etc/hyva-grid.xsd">
+    <source>
+        <arrayProvider>Element119\AdminOpCacheReport\Ui\DataProvider\OpCacheModuleList</arrayProvider>
+        <processors>
+            <processor class="Element119\AdminOpCacheReport\HyvaGridProcessor\OpCacheModuleListProcessor"/>
+        </processors>
+    </source>
+    <columns>
+        <include>
+            <column name="module_name" type="long_text"/>
+            <column name="memory_consumption"/>
+            <column name="hits"/>
+            <column name="script_count"/>
+        </include>
+    </columns>
+    <navigation>
+        <filters>
+            <filter column="module_name"/>
+            <filter column="memory_consumption"/>
+            <filter column="hits"/>
+            <filter column="script_count"/>
+        </filters>
+        <pager>
+            <defaultPageSize>20</defaultPageSize>
+            <pageSizes>20,30,50,100,200</pageSizes>
+        </pager>
+        <sorting>
+            <defaultSortByColumn>name</defaultSortByColumn>
+            <defaultSortDirection>asc</defaultSortDirection>
+        </sorting>
+    </navigation>
+</grid>

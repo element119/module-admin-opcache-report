@@ -8,15 +8,24 @@ declare(strict_types=1);
 namespace Element119\AdminOpCacheReport\ViewModel;
 
 use Element119\AdminOpCacheReport\System\ModuleConfig;
+use Magento\Framework\Module\Dir\ReverseResolver as ModuleDirResolver;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
 
 class OpCache implements ArgumentInterface
 {
+    public const MODULE_DATA_HITS = 'hits';
+    public const MODULE_DATA_KEY_UNKNOWN = 'Unknown';
+    public const MODULE_DATA_MEMORY_USAGE = 'memory_consumption';
+    public const MODULE_DATA_MODULE_NAME = 'module_name';
+    public const MODULE_DATA_SCRIPT_COUNT = 'script_count';
+
     private array $opCacheConfig = [];
     private array $opCacheStatus = [];
+    private array $opCacheModuleData = [];
 
     public function __construct (
         private readonly ModuleConfig $moduleConfig,
+        private readonly ModuleDirResolver $moduleDirResolver,
     ) {
     }
 
@@ -36,6 +45,45 @@ class OpCache implements ArgumentInterface
         }
 
         return $this->opCacheStatus;
+    }
+
+    /**
+     * Get Magento module OpCache statistics.
+     *
+     * OpCache scripts that do not belong to a Magento module are categorised as "Unknown". You can use this as the
+     * $module argument value.
+     *
+     * @param string|null $module
+     * @return array
+     */
+    public function getOpCacheModuleData(?string $module = null): array
+    {
+        if (!$this->opCacheModuleData) {
+            foreach ($this->getOpCacheStatusData('scripts') as $scriptPath => $data) {
+                $moduleName = $this->moduleDirResolver->getModuleName($scriptPath) ?? self::MODULE_DATA_KEY_UNKNOWN;
+
+                if (!array_key_exists($moduleName, $this->opCacheModuleData)) {
+                    $this->opCacheModuleData[$moduleName] = [
+                        self::MODULE_DATA_MODULE_NAME => $moduleName,
+                        self::MODULE_DATA_SCRIPT_COUNT => 0,
+                        self::MODULE_DATA_HITS => 0,
+                        self::MODULE_DATA_MEMORY_USAGE => 0,
+                    ];
+                }
+
+                $this->opCacheModuleData[$moduleName][self::MODULE_DATA_SCRIPT_COUNT]++;
+                $this->opCacheModuleData[$moduleName][self::MODULE_DATA_HITS] += $data[self::MODULE_DATA_HITS];
+                $this->opCacheModuleData[$moduleName][self::MODULE_DATA_MEMORY_USAGE] += $data[self::MODULE_DATA_MEMORY_USAGE];
+            }
+
+            ksort($this->opCacheModuleData);
+        }
+
+        if ($module && array_key_exists($module, $this->opCacheModuleData)) {
+            return $this->opCacheModuleData[$module];
+        }
+
+        return $this->opCacheModuleData;
     }
 
     public function getOpCacheConfigData(string $path)

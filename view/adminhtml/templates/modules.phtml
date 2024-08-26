@@ -1,0 +1,29 @@
+<?php
+/**
+ * Copyright © element119. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+declare(strict_types=1);
+
+use Element119\AdminOpCacheReport\ViewModel\OpCache;
+use Magento\Backend\Block\Template;
+use Magento\Framework\Escaper;
+
+/** @var Escaper $escaper */
+/** @var Template $block */
+/** @var OpCache $opCacheViewModel */
+$opCacheViewModel = $block->getData('opcache_info_view_model');
+
+if (!$opCacheViewModel->getOpCacheStatusData('opcache_enabled')) {
+    return;
+}
+?>
+<section class="section modules">
+    <h2 class="title">
+        <?= $escaper->escapeHtml(__('Modules')); ?>
+    </h2>
+
+    <div class="module-grid">
+        <?= $block->getChildHtml('opcache.module.grid'); ?>
+    </div>
+</section>
