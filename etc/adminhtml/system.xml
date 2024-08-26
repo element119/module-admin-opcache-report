@@ -29,6 +29,18 @@
                     <comment>Report OpCache memory data in terms of these memory units.</comment>
                     <source_model>Element119\AdminOpCacheReport\Model\Config\Source\MemoryUnits</source_model>
                 </field>
+                <field id="float_precision"
+                       translate="label comment"
+                       type="text"
+                       sortOrder="20"
+                       showInDefault="1"
+                       showInWebsite="0"
+                       showInStore="0"
+                       canRestore="1">
+                    <label>OpCache Report Float Precision</label>
+                    <comment>The number of decimal places to use when reporting decimal values.</comment>
+                    <validate>integer validate-digits validate-zero-or-greater</validate>
+                </field>
             </group>
         </section>
     </system>

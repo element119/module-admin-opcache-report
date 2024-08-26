@@ -11,6 +11,7 @@
         <system>
             <opcache_report>
                 <memory_units>3</memory_units>
+                <float_precision>2</float_precision>
             </opcache_report>
         </system>
     </default>

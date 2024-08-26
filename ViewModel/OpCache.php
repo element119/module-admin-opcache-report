@@ -50,8 +50,12 @@ class OpCache implements ArgumentInterface
 
     public function getOrdinalMemoryValue(int $memoryValue): string
     {
-        return number_format($memoryValue / (1024 ** $this->moduleConfig->getMemoryUnitExponent()), 2)
-            . $this->moduleConfig->getMemoryUnitLabel();
+        $value = number_format(
+            $memoryValue / (1024 ** $this->moduleConfig->getMemoryUnitExponent()),
+            $this->moduleConfig->getFloatPrecision()
+        );
+
+        return $value . $this->moduleConfig->getMemoryUnitLabel();
     }
 
     private function getData(array $data, string $path)

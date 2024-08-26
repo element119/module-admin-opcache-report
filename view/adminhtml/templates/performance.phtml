@@ -5,6 +5,7 @@
  */
 declare(strict_types=1);
 
+use Element119\AdminOpCacheReport\System\ModuleConfig;
 use Element119\AdminOpCacheReport\ViewModel\OpCache;
 use Magento\Backend\Block\Template;
 use Magento\Framework\Escaper;
@@ -17,6 +18,9 @@ $opCacheViewModel = $block->getData('opcache_info_view_model');
 if (!$opCacheViewModel->getOpCacheStatusData('opcache_enabled')) {
     return;
 }
+
+/** @var ModuleConfig $moduleConfigViewModel */
+$moduleConfigViewModel = $block->getData('module_config_view_model');
 
 $opCacheHits = $opCacheViewModel->getOpCacheStatusData('opcache_statistics.hits');
 $opCacheMisses = $opCacheViewModel->getOpCacheStatusData('opcache_statistics.misses');
@@ -55,7 +59,10 @@ $hitRate = $opCacheViewModel->getOpCacheStatusData('opcache_statistics.opcache_h
                  <?php else: ?>
                      data-score="bad"
                  <?php endif; ?>>
-                <?= $escaper->escapeHtml(sprintf('%s%%', number_format($hitRate, 2))); ?>
+                <?= $escaper->escapeHtml(sprintf(
+                    '%s%%',
+                    number_format($hitRate, $moduleConfigViewModel->getFloatPrecision())
+                )); ?>
             </div>
             <div class="note">
                 <?php if ($hitRate >= 95): ?>

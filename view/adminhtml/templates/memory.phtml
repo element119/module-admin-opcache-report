@@ -5,6 +5,7 @@
  */
 declare(strict_types=1);
 
+use Element119\AdminOpCacheReport\System\ModuleConfig;
 use Element119\AdminOpCacheReport\ViewModel\OpCache;
 use Magento\Backend\Block\Template;
 use Magento\Framework\Escaper;
@@ -17,6 +18,9 @@ $opCacheViewModel = $block->getData('opcache_info_view_model');
 if (!$opCacheViewModel->getOpCacheStatusData('opcache_enabled')) {
     return;
 }
+
+/** @var ModuleConfig $moduleConfigViewModel */
+$moduleConfigViewModel = $block->getData('module_config_view_model');
 
 $usedMemory = $opCacheViewModel->getOpCacheStatusData('memory_usage.used_memory');
 $freeMemory = $opCacheViewModel->getOpCacheStatusData('memory_usage.free_memory');
@@ -44,9 +48,10 @@ $totalMemory = $usedMemory + $freeMemory + $wastedMemory;
                 <?= $escaper->escapeHtml($opCacheViewModel->getOrdinalMemoryValue($usedMemory)); ?>
             </div>
             <div class="note">
-                <?= $escaper->escapeHtml(
-                    sprintf('(%s%%)', number_format(($usedMemory / $totalMemory) * 100, 2))
-                ); ?>
+                <?= $escaper->escapeHtml(sprintf(
+                    '(%s%%)',
+                    number_format(($usedMemory / $totalMemory) * 100, $moduleConfigViewModel->getFloatPrecision())
+                )); ?>
             </div>
         </div>
         <div class="free-memory">
@@ -57,9 +62,10 @@ $totalMemory = $usedMemory + $freeMemory + $wastedMemory;
                 <?= $escaper->escapeHtml($opCacheViewModel->getOrdinalMemoryValue($freeMemory)); ?>
             </div>
             <div class="note">
-                <?= $escaper->escapeHtml(
-                    sprintf('(%s%%)', number_format(($freeMemory / $totalMemory) * 100, 2))
-                ); ?>
+                <?= $escaper->escapeHtml(sprintf(
+                    '(%s%%)',
+                    number_format(($freeMemory / $totalMemory) * 100, $moduleConfigViewModel->getFloatPrecision())
+                )); ?>
             </div>
         </div>
         <div class="wasted-memory">
@@ -70,9 +76,10 @@ $totalMemory = $usedMemory + $freeMemory + $wastedMemory;
                 <?= $escaper->escapeHtml($opCacheViewModel->getOrdinalMemoryValue($wastedMemory)); ?>
             </div>
             <div class="note">
-                <?= $escaper->escapeHtml(
-                    sprintf('(%s%%)', number_format(($wastedMemory / $totalMemory) * 100, 2))
-                ); ?>
+                <?= $escaper->escapeHtml(sprintf(
+                    '(%s%%)',
+                    number_format(($wastedMemory / $totalMemory) * 100, $moduleConfigViewModel->getFloatPrecision())
+                )); ?>
             </div>
         </div>
     </div>

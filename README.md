@@ -23,8 +23,6 @@
 
 ⏳ Per-module statistics
 
-⏳ System configuration to customise logging and reporting formats
-
 <br/>
 
 ## 🔌 Installation
@@ -67,6 +65,11 @@ The OpCache information can be found in the admin under `System -> Tools -> PHP 
 
 ### Memory Units
 The units used when referencing memory in the OpCache report. The default value is `GB`.
+
+<br>
+
+### Float Precision
+The number of decimal places to use in the OpCache report.
 
 <br>
 
