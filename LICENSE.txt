@@ -1,0 +1,112 @@
+END USER LICENSE AGREEMENT
+This End User License Agreement ("Agreement") is entered into by and between you, the individual or entity ("Licensee"),
+and element119 for element119 software products or services ("Products"). By purchasing, installing, copying,
+downloading, or otherwise using the Products, you acknowledge that you have read this Agreement and agree to be bound by
+the terms outlined herein.
+
+TL;DR
+1. You must purchase a license for each publicly accessible Magento Open Source or Adobe Commerce installation.
+
+2. You cannot redistribute or reproduce any part of the products or services, in any form, alone or as a part in any
+   other product or service, either commercially or open source.
+
+3. element119 are under no obligation to provide support relating to customisations or any given combination of other
+   products or services.
+
+4. Products and services are provided "as is" and without warranty. element119 will not be liable for losses or damages
+   of any kind.
+
+TERMS AND CONDITIONS
+1. License
+    1.1. Subject to the Licensee's payment of the applicable fees and to the Licensee's compliance with other terms and
+    conditions of this Agreement, element119 grants the Licensee a non-transferable, non-assignable, non-sublicensable,
+    worldwide license to copy the Products for the purpose of installing and using it on a single production Magento
+    Open Source or Adobe Commerce installation.
+
+    1.2. In the event that the Licensee should exceed the installation limit of once per production installation, the
+    Licensee shall promptly provide element119 with written notice and pay element119 the fees required to license such
+    additional Products.
+
+    1.3. The Licensee shall implement reasonable controls to ensure that it does not exceed the maximum number of
+    licensed installations of the Products.
+
+    1.4. element119 shall provide to the Licensee an initial copy of the Products, including the associated technical
+    documentation, for use by the Licensee in accordance with this Agreement. Subject to Sections 1.1 - 1.3 above, the
+    Licensee is authorized to make a reasonable number of non-production copies of the Products, e.g., onto a local PC
+    or other testing environment, as it requires for the purpose of exercising its rights under this Agreement.
+
+    1.5. The Licensee is authorized to use the Products on a single substitute or backup server on a temporary basis
+    without charge any time a designated server is inoperative due to a malfunction beyond the control of the Licensee.
+
+    1.6. The Licensee acknowledges that portions of the Products may also be freely available to the public as part of
+    open source software or other element119 Products, with limited warranties and other limited assurances, and without
+    service or support.
+
+    1.7. element119 also grants the Licensee the right to modify and create derivative works of the Products. The
+    Licensee may contribute the rights in any of those derivative works back to element119. Regardless of whether the
+    Licensee contributes such derivative works rights to element119, the Licensee hereby grants element119 a perpetual
+    and irrevocable (irrespective of the expiration or termination of this Agreement), nonexclusive, transferable,
+    worldwide, and royalty-free license to reproduce, create derivative works of, distribute, perform, and display any
+    derivative works of the Products developed by or for the Licensee, and to use, make, have made, sell, offer to sell,
+    import, export, and otherwise exploit any product based on any such derivative works.
+
+    1.8. element119 reserves the right to modify the Agreement and impose any of its clauses at any time.
+
+2.  License Exclusions
+    2.1 Except as expressly authorized herein, the Licensee shall not distribute, sublicense, disclose, market, rent,
+    lease, or offer remote computing services, networking, batch processing or transfer of, the Products to any third
+    party, or permit any person or entity to have access to the Products by means of a time sharing, remote computing
+    services, networking, batch processing, service bureau or time sharing arrangement.
+
+    2.2. No license, right or interest in any element119 trademark, trade name or service mark is granted hereunder.
+
+3.  Fees and Payment Terms
+    The Licensee agrees to the fees and payment terms that are described in each Product transaction executed by the
+    Licensee.
+
+4. Refunds
+    4.1. The Licensee has the right to request a refund for up to 14 days following the purchase of the Products.
+
+    4.2. Fees for any subscription service, installation service, custom development service, or any other intangible
+    Products are non-refundable after they have been provided to the Licensee.
+
+5.  Warranty
+    5.1. element119 does not warrant that the Products will meet the Licensee's requirements, that the Products will
+    operate in the combinations which the Licensee may select for use, that the operation of the Products will be
+    uninterrupted or error-free, or that all error conditions will be corrected. Except as provided in this section all
+    Products provided hereunder are provided "as is".
+
+    5.2. The express warranties set forth in this section are the only warranties made by element119 with respect to the
+    Products provided by element119. element119 makes no other warranties, express, implied, or arising by custom or
+    trade usage, and, specifically, makes no warranty of title, non-infringement, accuracy, merchantability, or fitness
+    for any particular purpose. element119's express warranties shall not be enlarged, diminished, or affected by, and
+    no obligation or liability shall arise from, element119 rendering technical or other advice or service in connection
+    with the Products.
+
+6.  Limitation of Liability
+    Under no circumstances will element119 be liable for loss of revenue, loss of actual or anticipated profits or
+    savings, loss of contracts, loss of the use of money, loss of business, loss of opportunity, loss of goodwill, loss
+    of reputation, loss of or damage to data, or consequential or indirect loss of any kind.
+
+    In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, whether in
+    an action of contract, tort, or otherwise, arising from, out of or in connection with the Products or the use or
+    other dealings with the Products.
+
+7.  Support Services Terms and Conditions
+    element119 will have no obligation to provide support for any modifications or derivative works of the Products
+    developed by anyone other than element119.
+
+8. Customer References
+    The Licensee hereby grants element119 the right to display the Licensee's logos as part of element119's customer
+    lists and other related marketing materials.
+
+9. Termination
+    9.1. element119 has the right to terminate the Agreement with immediate effect by providing a written notice to the
+    Licensee. In the event of any violations of the Agreement, element119 immediately terminates the Agreement.
+
+    9.2. Immediately following the termination of this Agreement, the Licensee must remove or uninstall all copies of
+    the Products from any and all computers or storage devices on which it is stored.
+
+---
+
+Last modified: 19/12/22

@@ -1,0 +1,23 @@
+{
+    "name": "element119/module-name",
+    "type": "magento2-module",
+    "description": "A Magento 2 module that...",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "element119",
+            "email": "hello@element119.co.uk"
+        }
+    ],
+    "require": {
+        "magento/module-name": "^100.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Element119\\ModuleName\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}
