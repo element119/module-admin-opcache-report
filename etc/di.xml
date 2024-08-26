@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © element119. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Concrete Interface Implementations -->
+    <preference for="Element119\AdminOpCacheReport\Api\Data\OpCacheFlushLogInterface"
+                type="Element119\AdminOpCacheReport\Model\OpCacheFlushLog"/>
+    <preference for="Element119\AdminOpCacheReport\Api\Data\OpCacheFlushLogSearchResultsInterface"
+                type="Magento\Framework\Api\SearchResults"/>
+    <preference for="Element119\AdminOpCacheReport\Api\OpCacheFlushLogRepositoryInterface"
+                type="Element119\AdminOpCacheReport\Model\OpCacheFlushLogRepository"/>
+</config>

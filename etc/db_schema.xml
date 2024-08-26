@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © element119. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="e119_opcache_admin_flush_history"
+           resource="default"
+           engine="innodb"
+           comment="Admin OpCache Flush History">
+        <column name="log_id"
+                xsi:type="int"
+                unsigned="true"
+                nullable="false"
+                identity="true"
+                comment="Log ID"/>
+        <column name="admin_id"
+                xsi:type="int"
+                unsigned="true"
+                nullable="false"
+                comment="Admin User ID"/>
+        <column name="flushed_at"
+                xsi:type="timestamp"
+                on_update="false"
+                nullable="false"
+                default="CURRENT_TIMESTAMP"
+                comment="Flush Timestamp"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="log_id"/>
+        </constraint>
+    </table>
+</schema>
