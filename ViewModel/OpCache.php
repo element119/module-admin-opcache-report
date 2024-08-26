@@ -42,6 +42,11 @@ class OpCache implements ArgumentInterface
         return $this->getData($this->getOpCacheStatus(), $path);
     }
 
+    public function getOrdinalMemoryValue(int $memoryValue): string
+    {
+        return number_format($memoryValue / (1024 ** 3), 2) . 'GB';
+    }
+
     private function getData(array $data, string $path)
     {
         $current = $data;

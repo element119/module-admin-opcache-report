@@ -28,3 +28,40 @@
 .help-links {
     margin-left: 2rem;
 }
+
+.section {
+    border-top: 2px solid #e3e3e3;
+    margin-top: 3rem;
+    padding-top: 3rem;
+}
+
+.section .title {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.section .content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section.memory .content > div {
+    background-color: #eff6ff;
+    border: 2px solid #3b83f6;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    padding: 2rem;
+    text-align: center;
+    width: calc((100% / 4) - 1%);
+}
+
+.section.memory .content .label {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.section.memory .content .value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+}

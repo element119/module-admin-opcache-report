@@ -1,0 +1,74 @@
+<?php
+/**
+ * Copyright © element119. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+declare(strict_types=1);
+
+use Element119\AdminOpCacheReport\ViewModel\OpCache;
+use Magento\Backend\Block\Template;
+use Magento\Framework\Escaper;
+
+/** @var Escaper $escaper */
+/** @var Template $block */
+/** @var OpCache $opCacheViewModel */
+$opCacheViewModel = $block->getData('opcache_info_view_model');
+$usedMemory = $opCacheViewModel->getOpCacheStatusData('memory_usage.used_memory');
+$freeMemory = $opCacheViewModel->getOpCacheStatusData('memory_usage.free_memory');
+$wastedMemory = $opCacheViewModel->getOpCacheStatusData('memory_usage.wasted_memory');
+$totalMemory = $usedMemory + $freeMemory + $wastedMemory;
+?>
+<section class="section memory">
+    <h2 class="title">
+        <?= $escaper->escapeHtml(__('Memory Usage')); ?>
+    </h2>
+    <div class="content">
+        <div class="total-memory">
+            <div class="label">
+                <?= $escaper->escapeHtml(__('Total Memory')); ?>
+            </div>
+            <div class="value">
+                <?= $escaper->escapeHtml($opCacheViewModel->getOrdinalMemoryValue($totalMemory)); ?>
+            </div>
+        </div>
+        <div class="used-memory">
+            <div class="label">
+                <?= $escaper->escapeHtml(__('Used Memory')); ?>
+            </div>
+            <div class="value">
+                <?= $escaper->escapeHtml($opCacheViewModel->getOrdinalMemoryValue($usedMemory)); ?>
+            </div>
+            <div class="note">
+                <?= $escaper->escapeHtml(
+                    sprintf('(%s%%)', number_format(($usedMemory / $totalMemory) * 100, 2))
+                ); ?>
+            </div>
+        </div>
+        <div class="free-memory">
+            <div class="label">
+                <?= $escaper->escapeHtml(__('Free Memory')); ?>
+            </div>
+            <div class="value">
+                <?= $escaper->escapeHtml($opCacheViewModel->getOrdinalMemoryValue($freeMemory)); ?>
+            </div>
+            <div class="note">
+                <?= $escaper->escapeHtml(
+                    sprintf('(%s%%)', number_format(($freeMemory / $totalMemory) * 100, 2))
+                ); ?>
+            </div>
+        </div>
+        <div class="wasted-memory">
+            <div class="label">
+                <?= $escaper->escapeHtml(__('Wasted Memory')); ?>
+            </div>
+            <div class="value">
+                <?= $escaper->escapeHtml($opCacheViewModel->getOrdinalMemoryValue($wastedMemory)); ?>
+            </div>
+            <div class="note">
+                <?= $escaper->escapeHtml(
+                    sprintf('(%s%%)', number_format(($wastedMemory / $totalMemory) * 100, 2))
+                ); ?>
+            </div>
+        </div>
+    </div>
+</section>
