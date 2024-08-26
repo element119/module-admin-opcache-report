@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © element119. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Element119_AdminOpCacheReport::view"
+             title="PHP OpCache Report"
+             action="opcache_report/index"
+             translate="title"
+             module="Element119_AdminOpCacheReport"
+             sortOrder="1100"
+             parent="Magento_Backend::system_tools"
+             resource="Element119_AdminOpCacheReport::view"/>
+    </menu>
+</config>
