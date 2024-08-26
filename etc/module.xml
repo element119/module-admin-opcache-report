@@ -7,5 +7,9 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="Element119_AdminOpCacheReport"/>
+    <module name="Element119_AdminOpCacheReport">
+        <sequence>
+            <module name="Hyva_Admin"/>
+        </sequence>
+    </module>
 </config>
