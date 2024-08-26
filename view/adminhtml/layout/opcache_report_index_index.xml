@@ -29,6 +29,13 @@
                         </argument>
                     </arguments>
                 </block>
+                <block name="opcache.info.performance" template="Element119_AdminOpCacheReport::performance.phtml">
+                    <arguments>
+                        <argument name="opcache_info_view_model" xsi:type="object">
+                            Element119\AdminOpCacheReport\ViewModel\OpCache
+                        </argument>
+                    </arguments>
+                </block>
             </container>
         </referenceContainer>
     </body>

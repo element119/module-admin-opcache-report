@@ -1,0 +1,91 @@
+/**
+ * Copyright © element119. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+.opcache-status-notice {
+    border-radius: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 2rem;
+    width: fit-content;
+
+    &.disabled {
+        background-color: #fef2f2;
+        border: 2px solid #ef4444;
+    }
+
+    &.enabled {
+        background-color: #ecfdf5;
+        border: 2px solid #10b981;
+    }
+}
+
+#opcache-help {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.help-links {
+    margin-left: 2rem;
+}
+
+.section {
+    border-top: 2px solid #e3e3e3;
+    margin-top: 3rem;
+    padding-top: 3rem;
+
+    .title {
+        font-size: 2.5rem;
+        font-weight: 600;
+    }
+
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+
+        > div {
+            border-radius: 1rem;
+            margin-right: 1rem;
+            padding: 2rem;
+            text-align: center;
+            width: calc((100% / 4) - 1%);
+        }
+
+        .label {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-top: 1.5rem;
+        }
+    }
+}
+
+.section.memory .content > div {
+    background-color: #eff6ff;
+    border: 2px solid #3b83f6;
+}
+
+.section.performance .content {
+    > div {
+        background-color: #fffbeb;
+        border: 2px solid #f59f0b;
+    }
+
+    .hit-percentage {
+        .value {
+            color: #ef4444;
+
+            &[data-score="good"] {
+                color: #10b981;
+            }
+
+            &[data-score="okay"] {
+                color: #3b83f6;
+            }
+        }
+    }
+}

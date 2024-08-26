@@ -1,0 +1,66 @@
+<?php
+/**
+ * Copyright © element119. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+declare(strict_types=1);
+
+use Element119\AdminOpCacheReport\ViewModel\OpCache;
+use Magento\Backend\Block\Template;
+use Magento\Framework\Escaper;
+
+/** @var Escaper $escaper */
+/** @var Template $block */
+/** @var OpCache $opCacheViewModel */
+$opCacheViewModel = $block->getData('opcache_info_view_model');
+$opCacheHits = $opCacheViewModel->getOpCacheStatusData('opcache_statistics.hits');
+$opCacheMisses = $opCacheViewModel->getOpCacheStatusData('opcache_statistics.misses');
+$hitRate = $opCacheViewModel->getOpCacheStatusData('opcache_statistics.opcache_hit_rate');
+?>
+<section class="section performance">
+    <h2 class="title">
+        <?= $escaper->escapeHtml(__('Performance')); ?>
+    </h2>
+    <div class="content">
+        <div class="hits">
+            <div class="label">
+                <?= $escaper->escapeHtml(__('OpCache Hits')); ?>
+            </div>
+            <div class="value">
+                <?= $escaper->escapeHtml($opCacheHits); ?>
+            </div>
+        </div>
+        <div class="misses">
+            <div class="label">
+                <?= $escaper->escapeHtml(__('OpCache Misses')); ?>
+            </div>
+            <div class="value">
+                <?= $escaper->escapeHtml($opCacheMisses); ?>
+            </div>
+        </div>
+        <div class="hit-percentage">
+            <div class="label">
+                <?= $escaper->escapeHtml(__('Hit Percentage')); ?>
+            </div>
+            <div class="value"
+                 <?php if ($hitRate >= 95): ?>
+                     data-score="good"
+                 <?php elseif ($hitRate >= 85): ?>
+                     data-score="okay"
+                 <?php else: ?>
+                     data-score="bad"
+                 <?php endif; ?>>
+                <?= $escaper->escapeHtml(sprintf('%s%%', number_format($hitRate, 2))); ?>
+            </div>
+            <div class="note">
+                <?php if ($hitRate >= 95): ?>
+                    <?= $escaper->escapeHtml(__('A hit rate of 95% or greater is considered excellent.')); ?>
+                <?php elseif ($hitRate >= 85): ?>
+                    <?= $escaper->escapeHtml(__('A hit rate of 85% to 94% is acceptable but indicates there might be room for improvement.')); ?>
+                <?php else: ?>
+                    <?= $escaper->escapeHtml(__('A hit rate of less than 85% is generally considered poor and may lead to increased server load, higher CPU usage, and slower response times. It may indicate issues such as an insufficient cache size or frequent cache flushes etc.')); ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</section>
