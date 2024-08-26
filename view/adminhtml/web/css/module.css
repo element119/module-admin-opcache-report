@@ -4,9 +4,12 @@
  */
 .opcache-status-notice {
   border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
   font-size: 2rem;
   font-weight: 600;
   padding: 2rem;
+  text-align: center;
   width: fit-content;
 }
 .opcache-status-notice.disabled {
@@ -16,6 +19,9 @@
 .opcache-status-notice.enabled {
   background-color: #ecfdf5;
   border: 2px solid #10b981;
+}
+.opcache-status-notice .version {
+  font-size: 1rem;
 }
 #opcache-help {
   font-size: 1.5rem;

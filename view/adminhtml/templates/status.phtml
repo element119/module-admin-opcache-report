@@ -16,7 +16,16 @@ $opCacheViewModel = $block->getData('opcache_info_view_model');
 ?>
 <?php if ($opCacheViewModel->getOpCacheStatusData('opcache_enabled')): ?>
     <div class="opcache-status-notice enabled">
-        <?= $escaper->escapeHtml(__('OpCache Enabled')); ?>
+        <span>
+            <?= $escaper->escapeHtml(__('OpCache Enabled')); ?>
+        </span>
+        <span class="version">
+            <?= $escaper->escapeHtml(sprintf(
+                '%s v%s',
+                $opCacheViewModel->getOpCacheConfigData('version.opcache_product_name'),
+                $opCacheViewModel->getOpCacheConfigData('version.version')
+            )); ?>
+        </span>
     </div>
 <?php else: ?>
     <div class="opcache-status-notice enabled">
