@@ -13,6 +13,11 @@ use Magento\Framework\Escaper;
 /** @var Template $block */
 /** @var OpCache $opCacheViewModel */
 $opCacheViewModel = $block->getData('opcache_info_view_model');
+
+if ($opCacheViewModel->getOpCacheStatusData('opcache_enabled')) {
+    return;
+}
+
 $usedMemory = $opCacheViewModel->getOpCacheStatusData('memory_usage.used_memory');
 $freeMemory = $opCacheViewModel->getOpCacheStatusData('memory_usage.free_memory');
 $wastedMemory = $opCacheViewModel->getOpCacheStatusData('memory_usage.wasted_memory');
