@@ -16,6 +16,7 @@ class OpCache implements ArgumentInterface
     public const MODULE_DATA_HITS = 'hits';
     public const MODULE_DATA_KEY_UNKNOWN = 'Unknown';
     public const MODULE_DATA_MEMORY_USAGE = 'memory_consumption';
+    public const MODULE_DATA_MEMORY_USAGE_PERCENTAGE = 'memory_consumption_percentage';
     public const MODULE_DATA_MODULE_NAME = 'module_name';
     public const MODULE_DATA_SCRIPT_COUNT = 'script_count';
 
@@ -64,6 +65,10 @@ class OpCache implements ArgumentInterface
     public function getOpCacheModuleData(?string $module = null): array
     {
         if (!$this->opCacheModuleData) {
+            $totalMemory = $this->getOpCacheStatusData('memory_usage.used_memory')
+                + $this->getOpCacheStatusData('memory_usage.free_memory')
+                + $this->getOpCacheStatusData('memory_usage.wasted_memory');
+
             foreach ($this->getOpCacheStatusData('scripts') as $scriptPath => $data) {
                 $moduleName = $this->moduleDirResolver->getModuleName($scriptPath) ?? self::MODULE_DATA_KEY_UNKNOWN;
 
@@ -79,6 +84,12 @@ class OpCache implements ArgumentInterface
                 $this->opCacheModuleData[$moduleName][self::MODULE_DATA_SCRIPT_COUNT]++;
                 $this->opCacheModuleData[$moduleName][self::MODULE_DATA_HITS] += $data[self::MODULE_DATA_HITS];
                 $this->opCacheModuleData[$moduleName][self::MODULE_DATA_MEMORY_USAGE] += $data[self::MODULE_DATA_MEMORY_USAGE];
+                $this->opCacheModuleData[$moduleName][self::MODULE_DATA_MEMORY_USAGE_PERCENTAGE] = sprintf(
+                    '%s%%',
+                    $this->formatNumber(
+                        ($this->opCacheModuleData[$moduleName][self::MODULE_DATA_MEMORY_USAGE] / $totalMemory) * 100
+                    )
+                );
             }
 
             ksort($this->opCacheModuleData);

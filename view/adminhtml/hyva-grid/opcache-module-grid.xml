@@ -17,6 +17,7 @@
         <include>
             <column name="module_name" type="long_text"/>
             <column name="memory_consumption"/>
+            <column name="memory_consumption_percentage"/>
             <column name="hits"/>
             <column name="script_count"/>
         </include>
@@ -24,7 +25,6 @@
     <navigation>
         <filters>
             <filter column="module_name"/>
-            <filter column="memory_consumption"/>
             <filter column="hits"/>
             <filter column="script_count"/>
         </filters>
