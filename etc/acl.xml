@@ -12,10 +12,19 @@
             <resource id="Magento_Backend::admin">
                 <resource id="Magento_Backend::system">
                     <resource id="Magento_Backend::tools">
-                        <resource id="Element119_AdminOpCacheReport::view"
-                                  title="PHP OpCache Report View"
+                        <resource id="Element119_AdminOpCacheReport::menu"
+                                  title="PHP OpCache Report"
                                   translate="title"
-                                  sortOrder="1100"/>
+                                  sortOrder="1100">
+                            <resource id="Element119_AdminOpCacheReport::view"
+                                      title="PHP OpCache Report View"
+                                      translate="title"
+                                      sortOrder="10"/>
+                            <resource id="Element119_AdminOpCacheReport::flush"
+                                      title="Flush PHP OpCache"
+                                      translate="title"
+                                      sortOrder="20"/>
+                        </resource>
                     </resource>
                 </resource>
             </resource>
