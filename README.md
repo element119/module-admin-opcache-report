@@ -55,8 +55,18 @@ php bin/magento setup:upgrade
 <br/>
 
 ## 📚 User Guide
+Configuration for this module can be found in the Magento admin under `Stores -> Settings -> Configuration -> Advanced
+-> System -> PHP OpCache Report`.
+
+<br>
+
 ### OpCache Report
 The OpCache information can be found in the admin under `System -> Tools -> PHP OpCache Report`.
+
+<br>
+
+### Memory Units
+The units used when referencing memory in the OpCache report. The default value is `GB`.
 
 <br>
 

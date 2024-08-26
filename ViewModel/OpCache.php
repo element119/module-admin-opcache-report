@@ -7,12 +7,18 @@ declare(strict_types=1);
 
 namespace Element119\AdminOpCacheReport\ViewModel;
 
+use Element119\AdminOpCacheReport\System\ModuleConfig;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
 
 class OpCache implements ArgumentInterface
 {
     private array $opCacheConfig = [];
     private array $opCacheStatus = [];
+
+    public function __construct (
+        private readonly ModuleConfig $moduleConfig,
+    ) {
+    }
 
     public function getOpCacheConfig(): array
     {
@@ -44,7 +50,8 @@ class OpCache implements ArgumentInterface
 
     public function getOrdinalMemoryValue(int $memoryValue): string
     {
-        return number_format($memoryValue / (1024 ** 3), 2) . 'GB';
+        return number_format($memoryValue / (1024 ** $this->moduleConfig->getMemoryUnitExponent()), 2)
+            . $this->moduleConfig->getMemoryUnitLabel();
     }
 
     private function getData(array $data, string $path)
