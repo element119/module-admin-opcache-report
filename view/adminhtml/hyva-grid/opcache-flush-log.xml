@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © element119. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+ -->
+<grid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Hyva_Admin:etc/hyva-grid.xsd">
+    <source>
+        <arrayProvider>Element119\AdminOpCacheReport\Ui\DataProvider\OpCacheFlushLog</arrayProvider>
+    </source>
+    <columns>
+        <include>
+            <column name="log_id"/>
+            <column name="admin_name"/>
+            <column name="flushed_at"/>
+        </include>
+    </columns>
+    <navigation>
+        <filters>
+            <filter column="admin_name"/>
+            <filter column="flushed_at"/>
+        </filters>
+        <pager>
+            <defaultPageSize>20</defaultPageSize>
+            <pageSizes>20,30,50,100,200</pageSizes>
+        </pager>
+        <sorting>
+            <defaultSortByColumn>log_id</defaultSortByColumn>
+            <defaultSortDirection>desc</defaultSortDirection>
+        </sorting>
+    </navigation>
+</grid>

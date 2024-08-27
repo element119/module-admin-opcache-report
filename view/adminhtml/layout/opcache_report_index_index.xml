@@ -50,6 +50,19 @@
                         </arguments>
                     </block>
                 </block>
+                <block name="opcache.info.flush-log" template="Element119_AdminOpCacheReport::flush-log.phtml">
+                    <arguments>
+                        <argument name="opcache_info_view_model" xsi:type="object">
+                            Element119\AdminOpCacheReport\ViewModel\OpCache
+                        </argument>
+                    </arguments>
+
+                    <block class="Hyva\Admin\Block\Adminhtml\HyvaGrid" name="opcache.flush-log.grid">
+                        <arguments>
+                            <argument name="grid_name" xsi:type="string">opcache-flush-log</argument>
+                        </arguments>
+                    </block>
+                </block>
             </container>
         </referenceContainer>
     </body>

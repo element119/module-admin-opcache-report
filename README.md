@@ -76,4 +76,4 @@ The number of decimal places to use in the OpCache report.
 ![e119-opcache-report-disabled](https://github.com/user-attachments/assets/159b9649-0b9a-4833-ac06-eb0ef3a49193)
 
 ### Report - OpCache Enabled
-![e119-opcache-report-enabled](https://github.com/user-attachments/assets/998384b7-f5dc-4f06-97e2-4a801154c7c3)
+![e119-opcache-report-enabled](https://github.com/user-attachments/assets/8bf8e432-26de-47cf-afac-167f8986b292)

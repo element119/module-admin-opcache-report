@@ -1,0 +1,28 @@
+<?php
+/**
+ * Copyright © element119. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+declare(strict_types=1);
+
+use Element119\AdminOpCacheReport\ViewModel\OpCache;
+use Magento\Backend\Block\Template;
+use Magento\Framework\Escaper;
+
+/** @var Escaper $escaper */
+/** @var Template $block */
+/** @var OpCache $opCacheViewModel */
+$opCacheViewModel = $block->getData('opcache_info_view_model');
+
+if (!$opCacheViewModel->getOpCacheStatusData('opcache_enabled')) {
+    return;
+}
+?>
+<section class="section flush-log">
+    <h2 class="title">
+        <?= $escaper->escapeHtml(__('Flush History')); ?>
+    </h2>
+    <div class="flush-log-grid">
+        <?= $block->getChildHtml('opcache.flush-log.grid'); ?>
+    </div>
+</section>
