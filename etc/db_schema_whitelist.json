@@ -9,5 +9,16 @@
             "PRIMARY": true,
             "E119_OPCACHE_ADMIN_FLUSH_HISTORY_ADMIN_ID_ADMIN_USER_USER_ID": true
         }
+    },
+    "e119_opcache_report": {
+        "column": {
+            "entity_id": true,
+            "report_data": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
     }
 }

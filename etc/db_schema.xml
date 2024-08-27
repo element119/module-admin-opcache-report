@@ -7,6 +7,36 @@
 -->
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="e119_opcache_report"
+           resource="default"
+           engine="innodb"
+           comment="Historic OpCache Report Entries">
+        <column name="entity_id"
+                xsi:type="int"
+                unsigned="true"
+                nullable="false"
+                identity="true"
+                comment="Entity ID"/>
+        <column name="report_data"
+                xsi:type="json"
+                nullable="true"
+                comment="Report Data as JSON"/>
+        <column name="created_at"
+                xsi:type="timestamp"
+                on_update="false"
+                nullable="false"
+                default="CURRENT_TIMESTAMP"
+                comment="Report Creation Time"/>
+        <column name="updated_at"
+                xsi:type="timestamp"
+                on_update="true"
+                nullable="false"
+                default="CURRENT_TIMESTAMP"
+                comment="Report Update Time"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
     <table name="e119_opcache_admin_flush_history"
            resource="default"
            engine="innodb"

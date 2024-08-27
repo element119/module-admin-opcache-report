@@ -8,6 +8,12 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <!-- Concrete Interface Implementations -->
+    <preference for="Element119\AdminOpCacheReport\Api\Data\OpCacheReportInterface"
+                type="Element119\AdminOpCacheReport\Model\OpCacheReport"/>
+    <preference for="Element119\AdminOpCacheReport\Api\Data\OpCacheReportSearchResultsInterface"
+                type="Magento\Framework\Api\SearchResults"/>
+    <preference for="Element119\AdminOpCacheReport\Api\OpCacheReportRepositoryInterface"
+                type="Element119\AdminOpCacheReport\Model\OpCacheReportRepository"/>
     <preference for="Element119\AdminOpCacheReport\Api\Data\OpCacheFlushLogInterface"
                 type="Element119\AdminOpCacheReport\Model\OpCacheFlushLog"/>
     <preference for="Element119\AdminOpCacheReport\Api\Data\OpCacheFlushLogSearchResultsInterface"
