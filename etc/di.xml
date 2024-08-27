@@ -20,4 +20,8 @@
                 type="Magento\Framework\Api\SearchResults"/>
     <preference for="Element119\AdminOpCacheReport\Api\OpCacheFlushLogRepositoryInterface"
                 type="Element119\AdminOpCacheReport\Model\OpCacheFlushLogRepository"/>
+
+    <!-- Web API Interface Definitions -->
+    <preference for="Element119\AdminOpCacheReport\Api\OpCacheReportResultsInterface"
+               type="Element119\AdminOpCacheReport\Service\OpCacheReportResults"/>
 </config>

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © element119. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="opcache_report_logger"
+             instance="Element119\AdminOpCacheReport\Cron\Log"
+             method="execute">
+            <config_path>system/opcache_report/cron_schedule</config_path>
+        </job>
+        <job name="opcache_report_log_clean"
+             instance="Element119\AdminOpCacheReport\Cron\Clean"
+             method="execute">
+            <schedule>0 1 * * *</schedule>
+        </job>
+    </group>
+</config>

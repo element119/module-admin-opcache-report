@@ -41,6 +41,8 @@ class OpCache implements ArgumentInterface
 
     public function getOpCacheStatus(): array
     {
+        $this->opCacheStatus = [];
+
         if (!$this->opCacheStatus) {
             $this->opCacheStatus = opcache_get_status();
         }

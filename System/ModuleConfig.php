@@ -17,6 +17,11 @@ class ModuleConfig implements ArgumentInterface
     private const XML_PATH_MEMORY_UNITS = 'system/opcache_report/memory_units';
     private const XML_PATH_FLOAT_PRECISION = 'system/opcache_report/float_precision';
     private const XML_PATH_DATE_FORMAT = 'system/opcache_report/date_format';
+    private const XML_PATH_CRON_ENABLE = 'system/opcache_report/cron_enable';
+    private const XML_PATH_CRON_SCHEDULE = 'system/opcache_report/cron_schedule';
+    private const XML_PATH_LOG_TRUNCATE_DAYS = 'system/opcache_report/log_truncate_days';
+    private const XML_PATH_INCLUDE_RAW_SCRIPTS = 'system/opcache_report/include_raw_script_data';
+    private const XML_PATH_INCLUDE_MODULE_SCRIPTS = 'system/opcache_report/include_module_script_data';
 
     public function __construct(
         private readonly MemoryUnits $memoryUnits,
@@ -50,5 +55,30 @@ class ModuleConfig implements ArgumentInterface
     public function getDateFormat(): string
     {
         return (string)$this->scopeConfig->getValue(self::XML_PATH_DATE_FORMAT);
+    }
+
+    public function isDataCollectionCronEnabled(): bool
+    {
+        return $this->scopeConfig->isSetFlag(self::XML_PATH_CRON_ENABLE);
+    }
+
+    public function getDataCollectionCronSchedule(): string
+    {
+        return $this->scopeConfig->getValue(self::XML_PATH_CRON_SCHEDULE) ?? '0 * * * *';
+    }
+
+    public function getOpCacheLogTruncateDays(): int
+    {
+        return (int)$this->scopeConfig->getValue(self::XML_PATH_LOG_TRUNCATE_DAYS);
+    }
+
+    public function includeRawOpCacheScripts(): bool
+    {
+        return $this->scopeConfig->isSetFlag(self::XML_PATH_INCLUDE_RAW_SCRIPTS);
+    }
+
+    public function includeModuleOpCacheScripts(): bool
+    {
+        return $this->scopeConfig->isSetFlag(self::XML_PATH_INCLUDE_MODULE_SCRIPTS);
     }
 }

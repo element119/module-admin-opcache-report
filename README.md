@@ -17,8 +17,6 @@
 
 ✔️ Installable via Composer
 
-⏳ Logging of OpCache statistics for temporal analysis
-
 ⏳ Data visualisation
 
 <br/>
@@ -74,6 +72,23 @@ The number of decimal places to use in the OpCache report.
 ### Date Format
 The date format to use in the OpCache report. Supports
 [PHP date formats](https://www.php.net/manual/en/datetime.format.php).
+
+<br>
+
+### Cron Enable
+Toggle the periodic collection of OpCache statistics used for temporal reporting. This is disabled by default given the
+need to have OpCache enabled for PHP CLI - which may not be feasible for all environments.
+
+<br>
+
+### Cron Schedule
+Customise the schedule for the OpCache statistics collection cron using standard cron notation.
+
+<br>
+
+### Report Retention Period
+Optionally delete OpCache report data that is older than the specified number of days, creating a rolling reporting
+period.
 
 <br>
 

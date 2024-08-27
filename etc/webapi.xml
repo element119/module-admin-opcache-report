@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © element119. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/e119/opcache-report" method="GET">
+        <service class="Element119\AdminOpCacheReport\Api\OpCacheReportResultsInterface" method="get"/>
+        <resources>
+            <!-- TODO: Determine whether this endpoint should require authentication -->
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>

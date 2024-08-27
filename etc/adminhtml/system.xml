@@ -58,6 +58,73 @@
                         ]]>
                     </comment>
                 </field>
+                <field id="cron_enable"
+                       translate="label"
+                       type="select"
+                       sortOrder="40"
+                       showInDefault="1"
+                       showInWebsite="0"
+                       showInStore="0"
+                       canRestore="1">
+                    <label>Collect OpCache Report Data Periodically</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="cron_schedule"
+                       translate="label"
+                       type="text"
+                       sortOrder="50"
+                       showInDefault="1"
+                       showInWebsite="0"
+                       showInStore="0"
+                       canRestore="1">
+                    <label>OpCache Data Collection Schedule</label>
+                    <depends>
+                        <field id="system/opcache_report/cron_enable">1</field>
+                    </depends>
+                </field>
+                <field id="log_truncate_days"
+                       translate="label comment"
+                       type="text"
+                       sortOrder="60"
+                       showInDefault="1"
+                       showInWebsite="0"
+                       showInStore="0"
+                       canRestore="1">
+                    <label>Number of Days to Keep Historic OpCache Report Data</label>
+                    <comment>Absence of a value means historic report data will not be deleted.</comment>
+                    <validate>integer validate-digits validate-not-negative-number</validate>
+                    <depends>
+                        <field id="system/opcache_report/cron_enable">1</field>
+                    </depends>
+                </field>
+                <field id="include_raw_script_data"
+                       translate="label"
+                       type="select"
+                       sortOrder="70"
+                       showInDefault="1"
+                       showInWebsite="0"
+                       showInStore="0"
+                       canRestore="1">
+                    <label>Include Raw OpCache Script Data in Historic Reports?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="system/opcache_report/cron_enable">1</field>
+                    </depends>
+                </field>
+                <field id="include_module_script_data"
+                       translate="label"
+                       type="select"
+                       sortOrder="80"
+                       showInDefault="1"
+                       showInWebsite="0"
+                       showInStore="0"
+                       canRestore="1">
+                    <label>Include Module-Level OpCache Script Data in Historic Reports?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="system/opcache_report/cron_enable">1</field>
+                    </depends>
+                </field>
             </group>
         </section>
     </system>

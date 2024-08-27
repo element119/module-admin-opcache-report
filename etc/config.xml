@@ -13,6 +13,11 @@
                 <memory_units>3</memory_units>
                 <float_precision>2</float_precision>
                 <date_format>dS M Y H:i:s e</date_format>
+                <cron_enable>0</cron_enable>
+                <cron_schedule>0 * * * *</cron_schedule>
+                <log_truncate_days>28</log_truncate_days>
+                <include_raw_script_data>0</include_raw_script_data>
+                <include_module_script_data>1</include_module_script_data>
             </opcache_report>
         </system>
     </default>
