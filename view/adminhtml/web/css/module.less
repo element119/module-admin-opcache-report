@@ -16,15 +16,6 @@
         background-color: #fef2f2;
         border: 2px solid #ef4444;
     }
-
-    &.enabled {
-        background-color: #ecfdf5;
-        border: 2px solid #10b981;
-    }
-
-    .version {
-        font-size: 1rem;
-    }
 }
 
 #opcache-help {
@@ -49,15 +40,14 @@
 
     .content {
         display: flex;
-        flex-wrap: wrap;
 
         > div {
             border-radius: 1rem;
+            flex-basis: 100%;
             margin-bottom: 1rem;
             margin-right: 1rem;
             padding: 2rem;
             text-align: center;
-            width: calc((100% / 4) - 1%);
         }
 
         .label {
@@ -71,6 +61,11 @@
             margin-top: 1.5rem;
         }
     }
+}
+
+.section.status .content > div {
+    background-color: #ecfdf5;
+    border: 2px solid #10b981;
 }
 
 .section.memory .content > div {

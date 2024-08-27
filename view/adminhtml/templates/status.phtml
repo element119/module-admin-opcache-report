@@ -15,18 +15,69 @@ use Magento\Framework\Escaper;
 $opCacheViewModel = $block->getData('opcache_info_view_model');
 ?>
 <?php if ($opCacheViewModel->getOpCacheStatusData('opcache_enabled')): ?>
-    <div class="opcache-status-notice enabled">
-        <span>
-            <?= $escaper->escapeHtml(__('OpCache Enabled')); ?>
-        </span>
-        <span class="version">
-            <?= $escaper->escapeHtml(sprintf(
-                '%s v%s',
-                $opCacheViewModel->getOpCacheConfigData('version.opcache_product_name'),
-                $opCacheViewModel->getOpCacheConfigData('version.version')
-            )); ?>
-        </span>
-    </div>
+    <section class="section status">
+        <div class="content">
+            <div class="opcache-status">
+                <div class="label">
+                    <?= $escaper->escapeHtml(__('OpCache')); ?>
+                </div>
+                <div class="value">
+                    <?= $escaper->escapeHtml(__('Enabled')); ?>
+                </div>
+                <div class="note">
+                    <?= $escaper->escapeHtml(sprintf(
+                        '%s v%s',
+                        $opCacheViewModel->getOpCacheConfigData('version.opcache_product_name'),
+                        $opCacheViewModel->getOpCacheConfigData('version.version')
+                    )); ?>
+                </div>
+            </div>
+            <div class="start-time">
+                <div class="label">
+                    <?= $escaper->escapeHtml(__('Start Time')); ?>
+                </div>
+                <div class="value">
+                    <?= $escaper->escapeHtml($opCacheViewModel->formatDate(
+                        $opCacheViewModel->getOpCacheStatusData('opcache_statistics.start_time')
+                    )); ?>
+                </div>
+            </div>
+            <div class="last-restart-time">
+                <div class="label">
+                    <?= $escaper->escapeHtml(__('Last Restart Time')); ?>
+                </div>
+                <div class="value">
+                    <?= $escaper->escapeHtml($opCacheViewModel->formatDate(
+                        $opCacheViewModel->getOpCacheStatusData('opcache_statistics.last_restart_time')
+                    )); ?>
+                </div>
+            </div>
+            <div class="restart-pending">
+                <div class="label">
+                    <?= $escaper->escapeHtml(__('Restart Pending?')); ?>
+                </div>
+                <div class="value">
+                    <?= $escaper->escapeHtml(
+                        $opCacheViewModel->getOpCacheStatusData('restart_pending')
+                            ? __('Yes')
+                            : __('No')
+                    ); ?>
+                </div>
+            </div>
+            <div class="restart-in-progress">
+                <div class="label">
+                    <?= $escaper->escapeHtml(__('Restart In Progress?')); ?>
+                </div>
+                <div class="value">
+                    <?= $escaper->escapeHtml(
+                        $opCacheViewModel->getOpCacheStatusData('restart_in_progress')
+                            ? __('Yes')
+                            : __('No')
+                    ); ?>
+                </div>
+            </div>
+        </div>
+    </section>
 <?php else: ?>
     <div class="opcache-status-notice disabled">
         <?= $escaper->escapeHtml(__('OpCache Disabled')); ?>
