@@ -9,7 +9,7 @@
 
 ✔️ Built in accordance with Magento best practises
 
-✔️ Dedicated admin user controls
+✔️ Dedicated module configuration section and custom admin user controls
 
 ✔️ Seamless integration with Magento
 
@@ -71,9 +71,15 @@ The number of decimal places to use in the OpCache report.
 
 <br>
 
+### Date Format
+The date format to use in the OpCache report. Supports
+[PHP date formats](https://www.php.net/manual/en/datetime.format.php).
+
+<br>
+
 ## 📸 Screenshots & GIFs
 ### Report - OpCache Disabled
 ![e119-opcache-report-disabled](https://github.com/user-attachments/assets/159b9649-0b9a-4833-ac06-eb0ef3a49193)
 
 ### Report - OpCache Enabled
-![e119-opcache-report-enabled](https://github.com/user-attachments/assets/8bf8e432-26de-47cf-afac-167f8986b292)
+![e119-opcache-report-enabled](https://github.com/user-attachments/assets/0fc0e43c-3ede-49b8-a7ba-12d609e82e4b)
