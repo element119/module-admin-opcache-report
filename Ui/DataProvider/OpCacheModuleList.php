@@ -14,7 +14,8 @@ class OpCacheModuleList implements HyvaGridArrayProviderInterface
 {
     public function __construct(
         private readonly OpCache $opCache,
-    ) { }
+    ) {
+    }
 
     public function getHyvaGridData(): array
     {
