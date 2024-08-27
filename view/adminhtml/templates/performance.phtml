@@ -67,5 +67,29 @@ $hitRate = $opCacheViewModel->getOpCacheStatusData('opcache_statistics.opcache_h
                 <?php endif; ?>
             </div>
         </div>
+        <div class="oom-restarts">
+            <div class="label">
+                <?= $escaper->escapeHtml(__('Out of Memory Restarts')); ?>
+            </div>
+            <div class="value">
+                <?= $escaper->escapeHtml($opCacheViewModel->getOpCacheStatusData('opcache_statistics.oom_restarts')); ?>
+            </div>
+        </div>
+        <div class="hash-restarts">
+            <div class="label">
+                <?= $escaper->escapeHtml(__('Hash Restarts')); ?>
+            </div>
+            <div class="value">
+                <?= $escaper->escapeHtml($opCacheViewModel->getOpCacheStatusData('opcache_statistics.hash_restarts')); ?>
+            </div>
+        </div>
+        <div class="manual-restarts">
+            <div class="label">
+                <?= $escaper->escapeHtml(__('Manual Restarts')); ?>
+            </div>
+            <div class="value">
+                <?= $escaper->escapeHtml($opCacheViewModel->getOpCacheStatusData('opcache_statistics.manual_restarts')); ?>
+            </div>
+        </div>
     </div>
 </section>
