@@ -1,0 +1,13 @@
+{
+    "e119_opcache_admin_flush_history": {
+        "column": {
+            "log_id": true,
+            "admin_id": true,
+            "flushed_at": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "E119_OPCACHE_ADMIN_FLUSH_HISTORY_ADMIN_ID_ADMIN_USER_USER_ID": true
+        }
+    }
+}

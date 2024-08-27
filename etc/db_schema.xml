@@ -32,9 +32,9 @@
             <column name="log_id"/>
         </constraint>
         <constraint xsi:type="foreign"
-                    referenceId="E119_OPCACHE_ADMIN_FLUSH_HISTORY_LOG_ID_ADMIN_USER_USER_ID"
+                    referenceId="E119_OPCACHE_ADMIN_FLUSH_HISTORY_LOG_ADMIN_ID_ADMIN_USER_USER_ID"
                     table="e119_opcache_admin_flush_history"
-                    column="log_id"
+                    column="admin_id"
                     referenceTable="admin_user"
                     referenceColumn="user_id"
                     onDelete="CASCADE"/>
