@@ -41,6 +41,23 @@
                     <comment>The number of decimal places to use when reporting decimal values.</comment>
                     <validate>integer validate-digits validate-zero-or-greater</validate>
                 </field>
+                <field id="date_format"
+                       translate="label comment"
+                       type="text"
+                       sortOrder="30"
+                       showInDefault="1"
+                       showInWebsite="0"
+                       showInStore="0"
+                       canRestore="1">
+                    <label>OpCache Report Date Format</label>
+                    <comment>
+                        <![CDATA[
+                            <a href="https://www.php.net/manual/en/datetime.format.php" target="_blank">
+                                Formatting help.
+                            </a>
+                        ]]>
+                    </comment>
+                </field>
             </group>
         </section>
     </system>

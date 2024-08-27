@@ -48,6 +48,11 @@ class OpCache implements ArgumentInterface
         return $this->opCacheStatus;
     }
 
+    public function formatDate(int $timestamp): string
+    {
+        return date($this->moduleConfig->getDateFormat(), $timestamp);
+    }
+
     public function formatNumber($number): string
     {
         return number_format($number, $this->moduleConfig->getFloatPrecision());

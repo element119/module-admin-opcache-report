@@ -12,6 +12,7 @@
             <opcache_report>
                 <memory_units>3</memory_units>
                 <float_precision>2</float_precision>
+                <date_format>dS M Y H:i:s e</date_format>
             </opcache_report>
         </system>
     </default>
