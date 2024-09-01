@@ -47,9 +47,12 @@ $opCacheViewModel = $block->getData('opcache_info_view_model');
                     <?= $escaper->escapeHtml(__('Last Restart Time')); ?>
                 </div>
                 <div class="value">
-                    <?= $escaper->escapeHtml($opCacheViewModel->formatDate(
-                        $opCacheViewModel->getOpCacheStatusData('opcache_statistics.last_restart_time')
-                    )); ?>
+                    <?php $lastRestartTime = $opCacheViewModel->getOpCacheStatusData('opcache_statistics.last_restart_time'); ?>
+
+                    <?= $lastRestartTime
+                        ? $opCacheViewModel->formatDate(
+                            $opCacheViewModel->getOpCacheStatusData('opcache_statistics.last_restart_time')
+                        ) : __('N/A'); ?>
                 </div>
             </div>
             <div class="restart-pending">
