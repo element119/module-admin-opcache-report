@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © element119. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Hyva\Admin\Model\GridSourceType\ArrayProviderGridSourceType">
+        <plugin name="prevent_empty_flush_log_table_causing_hyva_admin_validation_error"
+                type="Element119\AdminOpCacheReport\Plugin\HandleEmptyOpCacheFlushLogTable"/>
+    </type>
+</config>
